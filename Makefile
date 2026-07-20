@@ -10,6 +10,7 @@ install:
 build: install
 	rm -rf $(SITE_DIR)
 	cd $(DOCS_DIR) && npx antora site.yml --stacktrace
+	touch $(SITE_DIR)/.nojekyll
 
 serve: build
 	@echo "Serving at http://localhost:$(PORT)"
