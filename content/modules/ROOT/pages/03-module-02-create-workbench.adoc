@@ -1,0 +1,168 @@
+= Module 2: Create and Launch a Workbench
+:navtitle: Module 2: Create a Workbench
+:toc: macro
+:toclevels: 1
+:icons: font
+
+In this module, you'll create a JupyterLab workbench by selecting a notebook image, reviewing the hardware profile and storage configuration, and then watching the workbench start up. By the end, you'll have a running JupyterLab environment ready for data science work.
+
+== Learning objectives
+
+By the end of this module, you'll be able to:
+
+* Navigate the workbench creation form
+* Select a notebook image from the available options
+* Understand hardware profiles and storage configuration
+* Observe the workbench startup lifecycle
+* Open and verify a running JupyterLab workbench
+
+== Exercise 1: Open the workbench creation form
+
+. On the `{project_name}` project Overview page, find the **Workbenches** section.
+
+. Click **Create a workbench**.
++
+The workbench creation form opens. Notice the left navigation showing the form sections: Name and description, Workbench image, Deployment size, Environment variables, Cluster storage, Connections, Feature stores.
+
+=== Verify
+
+* The workbench creation form is displayed at the URL ending in `/projects/{project_name}/spawner`
+
+== Exercise 2: Configure the workbench
+
+. **Name:** Enter `{workbench_name}`.
++
+The resource name is derived automatically.
+
+. **Image selection:** Click the dropdown and review the available images:
++
+[cols="1,3"]
+|===
+| Category | Description
+
+| **Training \| Jupyter \| PyTorch**
+| Full training stack with PyTorch, available in CPU, CUDA, and ROCm variants
+
+| **Jupyter \| Minimal**
+| Lightweight Python environment, available in CPU, CUDA, and ROCm variants
+|===
++
+Select **{notebook_image}**.
++
+TIP: Training images include PyTorch and Training Hub for model training workloads. Minimal images include only Python -- use these for data exploration, visualization, or lightweight development.
+
+. **Hardware profile:** Leave the default **cpu-only** profile selected.
++
+This allocates 2 CPU cores and 4 GiB memory (both request and limit).
+
+. **Cluster storage:** Review the auto-created storage:
++
+* **Name:** `{workbench_name}-storage`
+* **Access mode:** ReadWriteOnce (RWO)
+* **Size:** Max 20 GiB
+* **Mount path:** `/opt/app-root/src/`
+
+. Leave **Environment variables**, **Connections**, and **Feature stores** at their defaults (empty).
+
+=== Verify
+
+* Name is set to `{workbench_name}`
+* Image is `{notebook_image}`
+* Hardware profile shows cpu-only (2 CPU, 4 GiB)
+* Storage shows 20 GiB RWO at `/opt/app-root/src/`
+
+== Exercise 3: Create the workbench and observe startup
+
+. Click **Create workbench**.
++
+You are redirected to the **Workbenches** tab. Your workbench `{workbench_name}` appears in the list with status **Starting**.
++
+WARNING: You may briefly see a "There was a problem with the workbench" message. This is a known transient warning that resolves on its own -- do not stop the workbench.
+
+. Click the expand arrow next to the workbench name to see details.
+
+. Watch the startup status progression:
++
+[cols="1,2"]
+|===
+| Status | What's happening
+
+| **Starting**
+| Workbench pod is being created
+
+| **Pod assigned**
+| Pod scheduled to a cluster node
+
+| **PVC attached**
+| Persistent volume claim bound to storage
+
+| **Pulling workbench image**
+| Container image downloading (this may take several minutes on first pull)
+
+| **Workbench image pulled**
+| Image download complete, container starting
+
+| **Ready**
+| Workbench is running (green checkmark)
+|===
++
+NOTE: The image pull step can take 3-5 minutes on a cluster that hasn't cached the image. This is normal for first-time deployments.
+
+. In the expanded details, note:
++
+* **Packages:** JupyterLab v4.5
+* **Limits:** 2 CPU, 4 GiB Memory
+* **Requests:** 2 CPU, 4 GiB Memory
+* **Cluster storage:** `{workbench_name}-storage` mounted at `/opt/app-root/src/`
+
+=== Verify
+
+* Workbench status shows **Ready** with a green checkmark
+* The workbench name `{workbench_name}` is now a clickable link
+
+You can also verify from the command line:
+
+[.copypaste]
+[source,bash,subs="attributes"]
+----
+oc get notebook -n {project_name}
+----
+
+== Exercise 4: Open JupyterLab
+
+. Click the workbench name **{workbench_name}** (the link with the external-link icon).
++
+JupyterLab opens in a new browser tab. It may take a moment to load.
+
+. Verify the JupyterLab Launcher is displayed with:
++
+* **Notebook:** Python 3.12
+* **Console:** Python 3.12
+* **Other:** Terminal, Text File, Markdown File, Python File
+
+. In the left sidebar file browser, you should see a `lost+found` directory -- this confirms the persistent storage volume is mounted.
+
+=== Verify
+
+* JupyterLab is loaded and showing the Launcher tab
+* Python 3.12 is available as a notebook kernel
+* The file browser shows the PVC-backed storage
+
+== Module summary
+
+**What you accomplished:**
+
+* Created a workbench with a Jupyter Minimal CPU image
+* Reviewed hardware profile and storage configuration
+* Observed the full workbench startup lifecycle
+* Opened JupyterLab and verified the environment
+
+**Key takeaways:**
+
+* RHOAI offers Training images (with PyTorch) and Minimal images (Python only) -- choose based on your workload
+* Hardware profiles control CPU and memory requests/limits for the workbench pod
+* Storage is automatically provisioned as a PersistentVolumeClaim mounted at `/opt/app-root/src/`
+* The startup lifecycle has distinct phases -- image pull is the longest on first deployment
+* The transient startup warning is cosmetic and resolves automatically
+
+**You've completed the workshop!** Click **Conclusion** for a summary and next steps.

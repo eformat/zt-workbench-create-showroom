@@ -1,0 +1,5 @@
+* xref:index.adoc[Welcome]
+* xref:getting-connected.adoc[Getting Connected]
+* xref:02-module-01-navigate-and-project.adoc[Module 1: Navigate to RHOAI]
+* xref:03-module-02-create-workbench.adoc[Module 2: Create a Workbench]
+* xref:04-conclusion.adoc[Conclusion]

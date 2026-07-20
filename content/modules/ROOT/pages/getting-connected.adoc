@@ -1,0 +1,31 @@
+= Getting Connected
+
+In this activity, you will connect to the OpenShift console and verify your environment is ready for the workshop.
+
+== Login to OpenShift
+
+. Open the OpenShift console in your browser:
++
+{openshift_console_url}
+
+. Log in with the following credentials:
++
+**Username:** `{user}`
++
+**Password:** `{password}`
+
+. Once logged in, you should see the OpenShift console Projects page.
+
+== Verify the RHOAI dashboard
+
+. In the top navigation bar, click the grid icon (application launcher).
+
+. In the dropdown, under **OpenShift Self Managed Services**, click **Red Hat OpenShift AI**.
++
+The RHOAI dashboard opens in a new browser tab. It may take a few seconds to load.
+
+. Verify you see the RHOAI home page with the "Start by creating your project" message.
+
+== End of activity
+
+You are now logged in and ready to begin the workshop modules.

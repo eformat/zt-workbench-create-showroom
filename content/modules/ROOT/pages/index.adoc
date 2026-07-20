@@ -1,0 +1,41 @@
+= {lab_name}
+
+Welcome to the RHOAI Workbench Creation workshop! In this hands-on session, you'll navigate to Red Hat OpenShift AI, create a data science project, and launch a JupyterLab workbench from scratch.
+
+== What you'll learn
+
+In this workshop, you will:
+
+* **Navigate to RHOAI** -- find the OpenShift AI dashboard from the OpenShift console
+* **Create a data science project** -- set up a project that maps to an OpenShift namespace
+* **Create a workbench** -- select a notebook image, hardware profile, and storage configuration
+* **Understand the startup lifecycle** -- observe the workbench pod progress from Starting to Ready
+* **Launch JupyterLab** -- open a running workbench and verify the development environment
+
+== Understanding and navigating the workshop UI
+
+The workshop interface is designed to let you read instructions while working in your environment.
+
+**Left panel**: Workshop instructions and content
+
+**Right panel**: Embedded environment for hands-on exercises
+
+**View modes** (top navigation):
+
+* **Instructions**: Full-page instructions (hide environment tabs)
+* **Split**: Side-by-side view (current default) -- see both instructions and environment
+* **Tabs**: Full-page environment (hide instructions)
+
+**Adjusting the layout**: In Split mode, drag the middle divider left or right to resize the panels.
+
+== Who this is for
+
+This workshop is designed for data scientists, ML engineers, and developers who are new to Red Hat OpenShift AI and want a guided introduction to setting up their development environment.
+
+**Experience level**: Beginner
+
+**Estimated time**: 15-25 minutes
+
+== Let's get started!
+
+Click **Getting Connected** in the navigation to set up your environment.

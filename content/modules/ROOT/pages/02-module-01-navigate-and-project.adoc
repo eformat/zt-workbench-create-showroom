@@ -1,0 +1,85 @@
+= Module 1: Navigate to RHOAI and Create a Project
+:navtitle: Module 1: Navigate to RHOAI
+:toc: macro
+:toclevels: 1
+:icons: font
+
+In this module, you'll navigate from the OpenShift console to the Red Hat OpenShift AI dashboard and create a new data science project. This project is the foundation for all RHOAI work -- it maps directly to an OpenShift namespace.
+
+== Learning objectives
+
+By the end of this module, you'll be able to:
+
+* Open the RHOAI dashboard from the OpenShift console
+* Create a new data science project
+* Identify the key sections of the RHOAI dashboard
+* Verify the project is ready for workbench creation
+
+== Exercise 1: Navigate to the RHOAI dashboard
+
+. In the OpenShift console, click the **grid icon** (application launcher) in the top navigation bar.
+
+. In the **OpenShift Self Managed Services** dropdown, click **Red Hat OpenShift AI**.
++
+NOTE: The link opens in a new browser tab. You should see the RHOAI dashboard load with a "Start by creating your project" hero section.
+
+. Take a moment to explore the left sidebar navigation:
++
+* **Home** -- dashboard overview and quick starts
+* **Projects** -- data science projects (where you'll spend most of your time)
+* **AI hub** -- pre-built models and resources
+* **Gen AI studio** -- generative AI tools
+* **Develop & train** -- workbenches and pipelines
+* **Observe & monitor** -- metrics and monitoring
+* **Learning resources** -- tutorials and documentation
+* **Applications** -- deployed model endpoints
+* **Settings** -- cluster and user settings
+
+=== Verify
+
+* The RHOAI dashboard is loaded and shows the home page
+* The left sidebar navigation items are visible
+
+== Exercise 2: Create a data science project
+
+. Click the **Create a project** button on the home page (or navigate to **Projects** in the sidebar).
+
+. In the **Create project** modal:
++
+* **Name:** `{project_name}`
++
+The resource name is derived automatically from the project name.
+
+. Click **Create**.
++
+The project page loads with an Overview tab showing sections for Workbenches, Pipelines, and Experiment tracking.
+
+=== Verify
+
+* The project Overview page is loaded with the name `{project_name}`
+* You can see the **Workbenches**, **Pipelines**, and **Experiment tracking** sections
+* The project tabs are visible: Overview, Workbenches, Pipelines, Deployments, Cluster storage, Connections, Permissions, Settings
+
+You can also verify from the command line:
+
+[.copypaste]
+[source,bash,subs="attributes"]
+----
+oc get project {project_name}
+----
+
+== Module summary
+
+**What you accomplished:**
+
+* Navigated from the OpenShift console to the RHOAI dashboard
+* Created a new data science project named `{project_name}`
+* Explored the RHOAI dashboard navigation
+
+**Key takeaways:**
+
+* The RHOAI dashboard is a separate web application accessible via the OpenShift console's **Self Managed Services** menu
+* A data science project in RHOAI maps directly to an OpenShift namespace
+* Projects organize workbenches, pipelines, model deployments, and connections in one place
+
+**Next:** Module 2 will guide you through creating and launching a JupyterLab workbench in your new project.

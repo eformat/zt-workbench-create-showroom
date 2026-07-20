@@ -1,0 +1,59 @@
+= Conclusion
+:navtitle: Conclusion
+
+Congratulations! You've completed the *{lab_name}* workshop.
+
+== What you accomplished
+
+=== Module 1: Navigate to RHOAI and Create a Project
+
+* Navigated from the OpenShift console to the RHOAI dashboard
+* Created a data science project that maps to an OpenShift namespace
+
+=== Module 2: Create and Launch a Workbench
+
+* Created a JupyterLab workbench with the Jupyter Minimal CPU image
+* Configured hardware profile and persistent storage
+* Observed the full startup lifecycle from pod creation to Ready
+* Opened JupyterLab and verified the development environment
+
+== Key concepts
+
+[cols="1,2"]
+|===
+| Concept | What you learned
+
+| **Data science project**
+| Maps 1:1 to an OpenShift namespace; organizes workbenches, pipelines, and model deployments
+
+| **Notebook images**
+| Pre-built container images with JupyterLab; choose Training (PyTorch) or Minimal (Python only)
+
+| **Hardware profiles**
+| Control CPU and memory allocation for the workbench pod
+
+| **Persistent storage**
+| Automatically provisioned PVC mounted at `/opt/app-root/src/`
+
+| **Workbench lifecycle**
+| Pod creation → node assignment → PVC attach → image pull → container start → Ready
+|===
+
+== Next steps
+
+Now that you have a running workbench, you can:
+
+* **Import notebooks** -- upload `.ipynb` files or clone a git repo into the workbench
+* **Install packages** -- use `pip install` in a terminal or notebook cell
+* **Connect to data sources** -- add Connections in your project for S3, databases, or APIs
+* **Create pipelines** -- build and schedule data science pipelines with Elyra or KFP
+* **Serve models** -- deploy trained models with KServe single-model serving
+
+== Resources
+
+* https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/[Red Hat OpenShift AI Documentation^]
+* https://access.redhat.com/documentation/en-us/red_hat_openshift_container_platform/[OpenShift Container Platform Documentation^]
+
+== Thank you!
+
+We hope this workshop gave you a clear, hands-on introduction to setting up your data science environment on Red Hat OpenShift AI. Happy experimenting!
