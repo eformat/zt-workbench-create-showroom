@@ -23,6 +23,8 @@ By the end of this module, you'll be able to:
 . Click **Create a workbench**.
 +
 The workbench creation form opens. Notice the left navigation showing the form sections: Name and description, Workbench image, Deployment size, Environment variables, Cluster storage, Connections, Feature stores.
++
+image::06-workbench-creation-form.png[Workbench creation form,800]
 
 === Verify
 
@@ -35,6 +37,8 @@ The workbench creation form opens. Notice the left navigation showing the form s
 The resource name is derived automatically.
 
 . **Image selection:** Click the dropdown and review the available images:
++
+image::07-image-selection-dropdown.png[Image selection dropdown,800]
 +
 [cols="1,3"]
 |===
@@ -49,11 +53,15 @@ The resource name is derived automatically.
 +
 Select **{notebook_image}**.
 +
+image::08-image-selected.png[Image selected,800]
++
 TIP: Training images include PyTorch and Training Hub for model training workloads. Minimal images include only Python -- use these for data exploration, visualization, or lightweight development.
 
 . **Hardware profile:** Leave the default **cpu-only** profile selected.
 +
 This allocates 2 CPU cores and 4 GiB memory (both request and limit).
++
+image::09-hardware-profile.png[Hardware profile selection,800]
 
 . **Cluster storage:** Review the auto-created storage:
 +
@@ -63,6 +71,8 @@ This allocates 2 CPU cores and 4 GiB memory (both request and limit).
 * **Mount path:** `/opt/app-root/src/`
 
 . Leave **Environment variables**, **Connections**, and **Feature stores** at their defaults (empty).
++
+image::10-cluster-storage.png[Cluster storage configuration,800]
 
 === Verify
 
@@ -77,9 +87,13 @@ This allocates 2 CPU cores and 4 GiB memory (both request and limit).
 +
 You are redirected to the **Workbenches** tab. Your workbench `{workbench_name}` appears in the list with status **Starting**.
 +
+image::11-workbench-starting.png[Workbench starting,800]
++
 WARNING: You may briefly see a "There was a problem with the workbench" message. This is a known transient warning that resolves on its own -- do not stop the workbench.
 
 . Click the expand arrow next to the workbench name to see details.
++
+image::12-workbench-pulling-image.png[Workbench pulling image with details expanded,800]
 
 . Watch the startup status progression:
 +
@@ -115,6 +129,8 @@ NOTE: The image pull step can take 3-5 minutes on a cluster that hasn't cached t
 * **Requests:** 2 CPU, 4 GiB Memory
 * **Cluster storage:** `{workbench_name}-storage` mounted at `/opt/app-root/src/`
 
+image::13-workbench-ready.png[Workbench ready,800]
+
 === Verify
 
 * Workbench status shows **Ready** with a green checkmark
@@ -139,6 +155,8 @@ JupyterLab opens in a new browser tab. It may take a moment to load.
 * **Notebook:** Python 3.12
 * **Console:** Python 3.12
 * **Other:** Terminal, Text File, Markdown File, Python File
++
+image::14-jupyterlab-launcher.png[JupyterLab Launcher,800]
 
 . In the left sidebar file browser, you should see a `lost+found` directory -- this confirms the persistent storage volume is mounted.
 

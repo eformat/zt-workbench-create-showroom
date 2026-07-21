@@ -13,6 +13,8 @@ In this activity, you will connect to the OpenShift console and verify your envi
 **Username:** `{user}`
 +
 **Password:** `{password}`
++
+image::01-keycloak-login.png[Login page,800]
 
 . Once logged in, you should see the OpenShift console Projects page.
 
@@ -25,6 +27,8 @@ In this activity, you will connect to the OpenShift console and verify your envi
 The RHOAI dashboard opens in a new browser tab. It may take a few seconds to load.
 
 . Verify you see the RHOAI home page with the "Start by creating your project" message.
++
+image::02-rhoai-dashboard-home.png[RHOAI Dashboard Home,800]
 
 == End of activity
 
