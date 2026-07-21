@@ -23,7 +23,7 @@ By the end of this module, you'll be able to:
 +
 NOTE: The link opens in a new browser tab. You should see the RHOAI dashboard load with a "Start by creating your project" hero section.
 +
-image::02-rhoai-dashboard-home.png[RHOAI Dashboard,800]
+image::02-rhoai-dashboard-home.png[RHOAI Dashboard,link=self,window=blank,width=700]
 
 . Take a moment to explore the left sidebar navigation:
 +
@@ -46,7 +46,7 @@ image::02-rhoai-dashboard-home.png[RHOAI Dashboard,800]
 
 . Click the **Create a project** button on the home page (or navigate to **Projects** in the sidebar).
 +
-image::03-create-project-modal.png[Create project modal,800]
+image::03-create-project-modal.png[Create project modal,link=self,window=blank,width=700]
 
 . In the **Create project** modal:
 +
@@ -54,13 +54,13 @@ image::03-create-project-modal.png[Create project modal,800]
 +
 The resource name is derived automatically from the project name.
 +
-image::04-create-project-filled.png[Project name filled in,800]
+image::04-create-project-filled.png[Project name filled in,link=self,window=blank,width=700]
 
 . Click **Create**.
 +
 The project page loads with an Overview tab showing sections for Workbenches, Pipelines, and Experiment tracking.
 +
-image::05-project-overview.png[Project overview page,800]
+image::05-project-overview.png[Project overview page,link=self,window=blank,width=700]
 
 === Verify
 
@@ -70,8 +70,7 @@ image::05-project-overview.png[Project overview page,800]
 
 You can also verify from the command line:
 
-[.copypaste]
-[source,bash,subs="attributes"]
+[source,bash,role="execute",subs="attributes"]
 ----
 oc get project {project_name}
 ----
